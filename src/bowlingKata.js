@@ -12,7 +12,7 @@ class Game {
     let frameIndex=0
     for (let frame=0; frame< 10;frame++)
     {
-      if (this._rolls[frameIndex]==10) //strike
+      if (this.isStrike(frameIndex)) //strike
       {
         score=score+10+this.strikeBonus(frameIndex)
         frameIndex++
@@ -24,7 +24,7 @@ class Game {
       }
       else
       {
-        score=score+this.summOfBallsInFrame(frameIndex)
+        score=score+this.sumOfBallsInFrame(frameIndex)
         frameIndex=frameIndex+2
       }
       
@@ -34,6 +34,9 @@ class Game {
   isSpare(frameIndex){
     return this._rolls[frameIndex]+this._rolls[frameIndex+1]==10
   }
+  isStrike(frameIndex){
+    return this._rolls[frameIndex]==10
+  }
   spareBonus(frameIndex)
   {
     return this._rolls[frameIndex+2]
@@ -42,7 +45,7 @@ class Game {
   {
     return this._rolls[frameIndex+1]+this._rolls[frameIndex+2]
   }
-  summOfBallsInFrame(frameIndex)
+  sumOfBallsInFrame(frameIndex)
   {
     return this._rolls[frameIndex]+this._rolls[frameIndex+1]
   }
