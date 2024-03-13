@@ -50,4 +50,8 @@ describe("bowlingKata", () => {
     rollMany(16,0)
     expect(g.score()).toEqual(24);
   });
+  it("Probando un juego perfecto", () => {
+    rollMany(12,10)
+    expect(g.score()).toEqual(300);
+  });
 });
