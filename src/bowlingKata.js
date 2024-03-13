@@ -9,18 +9,18 @@ class Game {
   }
   score(){
     let score=0
-    let i=0
+    let frameIndex=0
     for (let frame=0; frame< 10;frame++)
     {
-      if (this._rolls[i]+this._rolls[i+1]==10)//spare
+      if (this._rolls[frameIndex]+this._rolls[frameIndex+1]==10)//spare
       {
-        score=score+10+this._rolls[i+2]
-        i=i+2
+        score=score+10+this._rolls[frameIndex+2]
+        frameIndex=frameIndex+2
       }
       else
       {
-        score=score+this._rolls[i]+this._rolls[i+1]
-        i=i+2
+        score=score+this._rolls[frameIndex]+this._rolls[frameIndex+1]
+        frameIndex=frameIndex+2
       }
       
     }
