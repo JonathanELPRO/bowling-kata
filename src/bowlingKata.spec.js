@@ -7,9 +7,7 @@ describe("bowlingKata", () => {
   });
   const g = new Game();
   it("Debería tirar 20 veces el jugador derribando cero pinos en cada tiro obteniendo un score de 0", () => {
-    let n=20
-    let pins=0
-    rollMany(n,pins)
+    rollMany(20,0)
     expect(g.score()).toEqual(0);
   });
   function rollMany(n,pins){
