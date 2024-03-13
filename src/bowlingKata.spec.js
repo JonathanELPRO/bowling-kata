@@ -39,4 +39,11 @@ describe("bowlingKata", () => {
     g.roll(5)
     g.roll(5)
   }
+  it("Probando un strike", () => {
+    g.roll(10)
+    g.roll(3)
+    g.roll(4)
+    rollMany(16,0)
+    expect(g.score()).toEqual(24);
+  });
 });

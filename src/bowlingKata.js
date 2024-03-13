@@ -12,7 +12,12 @@ class Game {
     let frameIndex=0
     for (let frame=0; frame< 10;frame++)
     {
-      if (this.isSpare(frameIndex))//spare
+      if (this._rolls[frameIndex]==10) //strike
+      {
+        score=score+10+this._rolls[frameIndex+1]+this._rolls[frameIndex+2]
+        frameIndex++
+      }
+      else if (this.isSpare(frameIndex))//spare
       {
         score=score+10+this._rolls[frameIndex+2]
         frameIndex=frameIndex+2
