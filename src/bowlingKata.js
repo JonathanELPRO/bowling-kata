@@ -1,11 +1,9 @@
 class Game {
   constructor() {
-    this._score = 0;
     this._rolls = new Array(21);
     this._currentRoll = 0;
   }
   roll(pins){
-    this._score= this._score+pins
     this._rolls[this._currentRoll++]=pins;
  
   }
