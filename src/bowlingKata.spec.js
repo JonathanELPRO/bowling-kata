@@ -35,12 +35,16 @@ describe("bowlingKata", () => {
     rollMany(17,0)
     expect(g.score()).toEqual(16);
   });
+  function rollStrike()
+  {
+    g.roll(10)
+  }
   function rollSpare(){
     g.roll(5)
     g.roll(5)
   }
   it("Probando un strike", () => {
-    g.roll(10)
+    rollStrike()
     g.roll(3)
     g.roll(4)
     rollMany(16,0)
