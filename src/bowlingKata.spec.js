@@ -18,10 +18,7 @@ describe("bowlingKata", () => {
   }
   it("Debería tirar 20 veces el jugador derribando un pino en cada tiro obteniendo un score de 20", () => {
     
-    for (let i=0;i<20;i++)
-    {
-      g.roll(1);
-    }
+    rollMany(20,1)
     expect(g.score()).toEqual(20);
   });
 });
