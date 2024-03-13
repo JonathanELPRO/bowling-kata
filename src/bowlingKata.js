@@ -14,17 +14,17 @@ class Game {
     {
       if (this._rolls[frameIndex]==10) //strike
       {
-        score=score+10+this._rolls[frameIndex+1]+this._rolls[frameIndex+2]
+        score=score+10+this.strikeBonus(frameIndex)
         frameIndex++
       }
       else if (this.isSpare(frameIndex))//spare
       {
-        score=score+10+this._rolls[frameIndex+2]
+        score=score+10+this.spareBonus(frameIndex)
         frameIndex=frameIndex+2
       }
       else
       {
-        score=score+this._rolls[frameIndex]+this._rolls[frameIndex+1]
+        score=score+this.summOfBallsInFrame(frameIndex)
         frameIndex=frameIndex+2
       }
       
@@ -33,6 +33,18 @@ class Game {
   }
   isSpare(frameIndex){
     return this._rolls[frameIndex]+this._rolls[frameIndex+1]==10
+  }
+  spareBonus(frameIndex)
+  {
+    return this._rolls[frameIndex+2]
+  }
+  strikeBonus(frameIndex)
+  {
+    return this._rolls[frameIndex+1]+this._rolls[frameIndex+2]
+  }
+  summOfBallsInFrame(frameIndex)
+  {
+    return this._rolls[frameIndex]+this._rolls[frameIndex+1]
   }
   
 }
