@@ -1,17 +1,25 @@
 import Game from "./bowlingKata.js";
 
 describe("bowlingKata", () => {
+  let g; 
+
+  beforeEach(() => {
+    // Crea una nueva instancia de la clase Game antes de cada test
+    g = new Game();
+  });
   it("Debería crearse la clase juego pero vacía", () => {
     const myGame = new Game();
     expect(myGame).toBeDefined();
   });
+
+  
   function rollMany(n,pins){
     for (let i=0;i<n;i++)
     {
       g.roll(pins);
     }
   }
-  const g = new Game();
+  
   it("Debería tirar 20 veces el jugador derribando cero pinos en cada tiro obteniendo un score de 0", () => {
     rollMany(20,0)
     expect(g.score()).toEqual(0);
